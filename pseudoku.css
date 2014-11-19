@@ -1,0 +1,298 @@
+/* Main Table CSS------Does not include subtable of main cells*/
+#pseudokuBoard {
+    width: 703px;
+	height: 703px;
+    margin: auto;
+    box-shadow: 0px 0px 30px #000000;
+    -moz-box-shadow: 0px 0px 30px #000000;
+    -webkit-box-shadow: 0 0 30px #000000;
+	border-radius: 15px;
+}
+
+#m4 {
+	padding: 5px;
+}
+
+#m1, #m7 {
+	padding: 0px 5px 0px 5px; 
+}
+
+#m3, #m5 {
+	padding: 5px 0px 5px 0px;
+}
+
+.matrixSquare {
+	float: left;
+}
+
+.matrixRow {
+	float: left;
+}
+
+.matrixCell {
+	display:table-cell;
+	position:relative;
+}
+
+.matrix1 .matrixCell {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+
+.matrix2 .matrixCell {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #FFFFFF;
+    background-color: #000000;
+    opacity: 0.8;
+    border-radius: 15px;
+}
+
+
+/* Main Cells SubTable CSS*/
+#subMatrix {
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+}
+
+.subMatrixRow {
+	display: inline-block;
+	overflow: hidden;
+}
+
+.editSubCell {
+    width: 10px;
+    height: 10px;
+	display: table-cell;
+	overflow: hidden;
+	margin: auto;
+}
+
+.editMainSubCell {
+    width: 10px;
+    height: 10px;
+	display: table-cell;
+	overflow: hidden;
+	margin: auto;
+}
+
+.editSubCell input {
+    font-family: Segoe UI, Arial;
+    font-size: 12px;
+	font-weight: bold;
+    color: #0080FF;
+    width: 25px;
+    /*height: 44px;*/
+    padding: 0px;
+    border: 0px;
+	margin: 0px;
+    background: none !important;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+	overflow: hidden;
+	margin: auto;
+}
+
+.editMainSubCell input {
+    font-family: Segoe UI, Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    width: 25px;
+    /*height: 44px;*/
+    padding: 0px;
+    border: 0px;
+	margin: 0px;
+    background: none !important;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+	overflow: hidden;
+	margin: auto;
+}
+
+.matrix1  .editMainSubCell input {
+	color: #000000;
+}
+
+.matrix2  .editMainSubCell input {
+	color: #FFFFFF;
+}
+
+/* Guess Card Table CSS*/
+
+
+#guessCardTable {
+	position: relative;
+	float: left;
+	left: 12px;
+	display: none;
+}
+
+#cellPopUp {
+	position: fixed;
+	display: none;
+	width: 0px;
+	height: 0px;
+	opacity: 0.8;
+	border-radius: 15px;
+}
+
+.popUpRow {
+	display: inline-block;
+	overflow: hidden:
+}
+
+.guessCell {
+	display: table-cell;
+	overflow: hidden;
+	width: 58px;
+	height: 50px;
+}
+
+.guessEdit {
+    width: 58px;
+    height: 50px;
+	display: table-cell;
+	overflow: auto;
+}
+
+.mainGuessEdit {
+    width: 58px;
+    height: 50px;
+	display: table-cell;
+	overflow: auto;
+}
+
+.guessEdit input {
+    font-family: Segoe UI, Arial;
+    font-size: 20px;
+	font-weight: bold;
+    color: #FFFFFF;
+    width: 35px;
+    /*height: 44px;*/
+    padding: 0px;
+    border: 0px;
+    background:#000000;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 10px;
+	overflow: auto;
+	margin: auto;
+}
+
+.mainGuessEdit input {
+    font-family: Segoe UI, Arial;
+    font-size: 40px;
+	font-weight: bold;
+    color: #FFFFFF;
+    width: 35px;
+    /*height: 44px;*/
+    padding: 0px;
+    border: 0px;
+    background:#000000;
+    opacity: 0.6;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    border-radius: 10px;
+	overflow: auto;
+	margin: auto;
+}
+
+/* Game Buttons CSS */
+
+.controls {
+	width: 200px;
+	height: 50px;
+	display:inline-block;
+	margin: 0px 15px 25px 15px;
+	-moz-box-shadow:inset 5px 5px 10px 0px #97c4fe;
+	-webkit-box-shadow:inset 5px 5px 10px 0px #97c4fe;
+	box-shadow:inset 5px 5px 10px 0px #97c4fe;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+	background:-moz-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-webkit-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-o-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:-ms-linear-gradient(top, #3d94f6 5%, #1e62d0 100%);
+	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0',GradientType=0);
+	background-color:#3d94f6;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.controls:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+	background:-moz-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-webkit-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-o-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:-ms-linear-gradient(top, #1e62d0 5%, #3d94f6 100%);
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6',GradientType=0);
+	background-color:#1e62d0;
+
+}
+
+.controls:active {
+	position:relative;
+	top:1px;
+}
+
+#buttonBar {
+	list-style: none;
+	position: relative;
+    margin: 0;
+    padding: 0;
+	text-align:center;
+}
+
+#buttonBar li {
+	display: inline;
+}
+
+/* Other CSS Properties */
+
+#content {
+	display: block;
+}
+
+#header {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size:x-large;
+	text-align:center;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* BACKGROUNDS */
+
+.hoverBackground1 {
+	background-color: #000000;
+	border-radius: 15px;
+}
+
+.hoverBackground2 {
+	background-color: #FFFFFF;
+	border-radius: 15px;
+}
+
+body {
+	background: url('http://lifewallpapers.com/wp-content/uploads/2014/09/Abstract-Backgrounds-Website-Background-Blue-Wallpaper-1920x1080.jpg') repeat-x;
+}
