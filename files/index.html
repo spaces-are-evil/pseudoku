@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="pseudoku.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script type"text/javascript" src="pseudoku.js"></script>
+	<title>Pseudo-Ku</title>
+</head>
+	<body>
+		<div id="header">
+			<h1>Pseudo-Ku</h1>
+		</div>
+		<div id="content">
+			<div id="buttons">
+				<ul id="buttonBar">
+					<li>
+						<input type="button" class="controls" value="New Game" onclick="fillRandomSquares();"/>
+					</li>
+					<li>
+						<input type="button" class="controls" value="Submit Puzzle" onclick="checkPlayAnswer()"/>
+					</li>
+					<li>
+						<label for="difficulty">Difficulty</label>
+						<select id="difficulty">
+							<option value="52">Easy</option>
+							<option value="43">Normal</option>
+							<option value="34">Hard</option>
+							<option value="25" selected>Extreme</option>
+						</select>
+					</li>
+					<li>
+						<input type="button" class="controls" id="errorButton" value="Check for Errors"/>
+					</li>
+					<li>
+						<input type="button" class="controls" value="Solve Puzzle" onclick="solveCurrentPuzzle();"/>
+					</li>
+				</ul>
+			</div>
+			<div id="pseudokuBoard">
+				<div class="matrixRow" id="matrixRow1">
+					<div class="matrixSquare">
+						<div class="matrix1" id="m0">
+							<div id="m0Row1">
+								<div id="0" class="matrixCell">
+								</div>
+								<div id="1" class="matrixCell">
+								</div>
+								<div id="2" class="matrixCell">
+								</div>
+							</div>
+							<div id="m0Row2">
+								<div id="3" class="matrixCell">
+								</div>
+								<div id="4" class="matrixCell">
+								</div>
+								<div id="5" class="matrixCell">
+								</div>
+							</div>
+							<div id="m0Row3">
+								<div id="6" class="matrixCell">
+								</div>
+								<div id="7" class="matrixCell">
+								</div>
+								<div id="8" class="matrixCell">
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix2" id="m1">
+							<div id="m1Row1">
+								<div id="9" class="matrixCell">
+								</div>
+								<div id="10" class="matrixCell">
+								</div>
+								<div id="11" class="matrixCell">
+								</div>
+							</div>
+							<div id="m1Row2">
+								<div id="12" class="matrixCell">
+								</div>
+								<div id="13" class="matrixCell">
+								</div>
+								<div id="14" class="matrixCell">
+								</div>
+							</div>
+							<div id="m1Row3">
+								<div id="15" class="matrixCell">
+								</div>
+								<div id="16" class="matrixCell">
+								</div>
+								<div id="17" class="matrixCell">
+								</div>
+							</div>
+						</div>		
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix1" id="m2">
+							<div id="m2Row1">
+								<div id="18" class="matrixCell">
+								</div>
+								<div id="19" class="matrixCell">
+								</div>
+								<div id="20" class="matrixCell">
+								</div>
+							</div>
+							<div id="m2Row2">
+								<div id="21" class="matrixCell">
+								</div>
+								<div id="22" class="matrixCell">
+								</div>
+								<div id="23" class="matrixCell">
+								</div>
+							</div>
+							<div id="m2Row3">
+								<div id="24" class="matrixCell">
+								</div>
+								<div id="25" class="matrixCell">
+								</div>
+								<div id="26" class="matrixCell">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="matrixRow" id="matrixRow2">
+					<div class="matrixSquare">
+						<div class="matrix2" id="m3">
+							<div id="m3Row1">
+								<div id="27" class="matrixCell">
+								</div>
+								<div id="28" class="matrixCell">
+								</div>
+								<div id="29" class="matrixCell">
+								</div>
+							</div>
+							<div id="m3Row2">
+								<div id="30" class="matrixCell">
+								</div>
+								<div id="31" class="matrixCell">
+								</div>
+								<div id="32" class="matrixCell">
+								</div>
+							</div>
+							<div id="m3Row3">
+								<div id="33" class="matrixCell">
+								</div>
+								<div id="34" class="matrixCell">
+								</div>
+								<div id="35" class="matrixCell">
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix1" id="m4">
+							<div id="m4Row1">
+								<div id="36" class="matrixCell">
+								</div>
+								<div id="37" class="matrixCell">
+								</div>
+								<div id="38" class="matrixCell">
+								</div>
+							</div>
+							<div id="m4Row2">
+								<div id="39" class="matrixCell">
+								</div>
+								<div id="40" class="matrixCell">
+								</div>
+								<div id="41" class="matrixCell">
+								</div>
+							</div>
+							<div id="m4Row3">
+								<div id="42" class="matrixCell">
+								</div>
+								<div id="43" class="matrixCell">
+								</div>
+								<div id="44" class="matrixCell">
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix2" id="m5">
+							<div id="m5Row1">
+								<div id="45" class="matrixCell">
+								</div>
+								<div id="46" class="matrixCell">
+								</div>
+								<div id="47" class="matrixCell">
+								</div>
+							</div>
+							<div id="m5Row2">
+								<div id="48" class="matrixCell">
+								</div>
+								<div id="49" class="matrixCell">
+								</div>
+								<div id="50" class="matrixCell">
+								</div>
+							</div>
+							<div id="m5Row3">
+								<div id="51" class="matrixCell">
+								</div>
+								<div id="52" class="matrixCell">
+								</div>
+								<div id="53" class="matrixCell">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="matrixRow" id="matrixRow3">
+					<div class="matrixSquare">
+						<div class="matrix1" id="m6">
+							<div id="m6Row1">
+								<div id="54" class="matrixCell">
+								</div>
+								<div id="55" class="matrixCell">
+								</div>
+								<div id="56" class="matrixCell">
+								</div>
+							</div>
+							<div id="m6Row2">
+								<div id="57" class="matrixCell">
+								</div>
+								<div id="58" class="matrixCell">
+								</div>
+								<div id="59" class="matrixCell">
+								</div>
+							</div>
+							<div id="m6Row3">
+								<div id="60" class="matrixCell">
+								</div>
+								<div id="61" class="matrixCell">
+								</div>
+								<div id="62" class="matrixCell">
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix2" id="m7">
+							<div id="m7Row1">
+								<div id="63" class="matrixCell">
+								</div>
+								<div id="64" class="matrixCell">
+								</div>
+								<div id="65" class="matrixCell">
+								</div>
+							</div>
+							<div id="m7Row2">
+								<div id="66" class="matrixCell">
+								</div>
+								<div id="67" class="matrixCell">
+								</div>
+								<div id="68" class="matrixCell">
+								</div>
+							</div>
+							<div id="m7Row3">
+								<div id="69" class="matrixCell">
+								</div>
+								<div id="70" class="matrixCell">
+								</div>
+								<div id="71" class="matrixCell">
+								</div>
+							</div>
+						</div>		
+					</div>
+					<div class="matrixSquare">
+						<div class="matrix1" id="m8">
+							<div id="m8Row1">
+								<div id="72" class="matrixCell">
+								</div>
+								<div id="73" class="matrixCell">
+								</div>
+								<div id="74" class="matrixCell">
+								</div>
+							</div>
+							<div id="m8Row2">
+								<div id="75" class="matrixCell">
+								</div>
+								<div id="76" class="matrixCell">
+								</div>
+								<div id="77" class="matrixCell">
+								</div>
+							</div>
+							<div id="m8Row3">
+								<div id="78" class="matrixCell">
+								</div>
+								<div id="79" class="matrixCell">
+								</div>
+								<div id="80" class="matrixCell">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="cellPopUp">
+				<div id="guessCardTable">
+					<div class="popUpRow" id="popUpRow1">
+						<div id="g0" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g1" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g2" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+					</div>
+					<div class="popUpRow" id="popUpRow2">
+						<div id="g3" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g4" class="mainGuessEdit">
+							<input type="text" class="guessInput" id="mainGuessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g5" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+					</div>
+					<div class="popUpRow" id="popUpRow3">
+						<div id="g6" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g7" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+						<div id="g8" class="guessEdit">
+							<input type="text" class="guessInput" pattern="[0-9]" maxlength="1" size="1" min="1"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
