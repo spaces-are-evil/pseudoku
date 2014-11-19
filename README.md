@@ -1,4 +1,0 @@
-pseudoku
-========
-
-Sudoku web application
